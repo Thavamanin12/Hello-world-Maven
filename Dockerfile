@@ -14,8 +14,9 @@ RUN mv apache-tomcat-10.1.8/* /usr/local/tomcat/.
 
 
 WORKDIR /usr/local/tomcat/webapps
-RUN curl -O -L https://github.com/Thavamanin12/Hello-world-Maven/tree/master/dist/Hello-world-app-1.0.0.war
+# RUN curl -O -L https://github.com/Thavamanin12/Hello-world-Maven/tree/master/dist/Hello-world-app-1.0.0.war
+ADD /dist/Hello-world-app-1.0.0.war /usr/local/tomcat/webapps/
 
-EXPOSE 4000
+EXPOSE 8080
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
